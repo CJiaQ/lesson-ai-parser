@@ -7,7 +7,7 @@ Maven + Lombok
 
 ## 建表SQL
 --1.教案文件基础信息表
-
+```sql
 CREATE TABLE `lesson_file` (
 `id` bigint(20) NOT NULL AUTO_INCREMENT,
 `file_name` varchar(20) NOT NULL COMMENT '文件名',
@@ -18,10 +18,10 @@ CREATE TABLE `lesson_file` (
 `upload_time` datetime NOT NULL COMMENT '上传时间',
 `status` varchar(20) NOT NULL COMMENT '状态',
 PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4
-
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
+```
 --2.AI结构化解析结果表
-
+```sql
 CREATE TABLE `lesson_analysis` (
 `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '主键ID',
 `file_id` bigint(20) NOT NULL COMMENT '关联的文件ID',
@@ -36,17 +36,23 @@ CREATE TABLE `lesson_analysis` (
 `create_time` datetime DEFAULT NULL COMMENT '创建时间',
 PRIMARY KEY (`id`),
 KEY `idx_file_id` (`file_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COMMENT='AI教案解析结果表'
-
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COMMENT='AI教案解析结果表';
+```
 ## 接口说明
 1. 文件上传接口
+   
 接口地址:
+
 POST /api/files/upload
+
 功能说明:
+
 上传教案文件，仅支持 PDF、DOC、DOCX 格式，文件大小不超过 50MB。
+
 ---
 
 2. 文件列表查询接口
+   
 接口地址:
 
 GET /api/files/list
@@ -54,7 +60,6 @@ GET /api/files/list
 功能说明
 
 查询所有已上传文件。
-
 
 ---
 
@@ -67,7 +72,6 @@ GET /api/files/{id}
 功能说明
 
 根据文件 ID 查询文件详细信息。
-
 
 ---
 
@@ -84,13 +88,15 @@ POST /api/files/parse/{id}
 
 ## 自测说明
 文件上传接口测试
-![docup.png](../../../Pictures/%E6%88%AA%E5%9B%BE/docup.png)
+<img width="1651" height="1034" alt="docup" src="https://github.com/user-attachments/assets/e98c9f72-9eac-4eae-9136-5c02c84e2048" />
 文件列表测试
-![doclist.png](../../../Pictures/%E6%88%AA%E5%9B%BE/doclist.png)
+<img width="1651" height="1034" alt="doclist" src="https://github.com/user-attachments/assets/fd9d9515-03da-488d-ab5d-2ce9908fe3ee" />
+
 文件详情测试
-![docdl.png](../../../Pictures/%E6%88%AA%E5%9B%BE/docdl.png)
+<img width="1649" height="1034" alt="docdl" src="https://github.com/user-attachments/assets/6b52a4fc-a319-407b-b534-4bafd3685d12" />
+
 AI解析测试
-![docanaly.png](../../../Pictures/%E6%88%AA%E5%9B%BE/docanaly.png)
+<img width="1649" height="1034" alt="docanaly" src="https://github.com/user-attachments/assets/08d490a3-7a6e-456c-89f9-e0c311b4b170" />
 
 ## AI工具使用
 开发过程中使用了Gemini和ChatGPT作为辅助工具。
