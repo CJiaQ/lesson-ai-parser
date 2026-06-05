@@ -67,11 +67,16 @@ file:
 mvn clean package
 ```
 ## 5.运行项目
-
+在项目根目录执行：
 ```md
 java -jar target/lesson-ai-parser-0.0.1-SNAPSHOT.jar
 ```
 <img width="1775" height="200" alt="qidong" src="https://github.com/user-attachments/assets/f57895ef-d4d0-4cd1-afb8-84d8ba45d65f" />
+
+启动成功后访问：
+```md
+http://localhost:8080
+```
 
 # 文件上传接口 
 ## 接口地址
