@@ -46,7 +46,7 @@ KEY `idx_file_id` (`file_id`)
 
 ## 3.修改数据库配置
 
-```md
+```yaml
 server:
   port: 8080
 
@@ -54,7 +54,7 @@ spring:
   datasource:
     url: jdbc:mysql://localhost:3306/lesson_ai?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai
     username: root
-    password: root
+    password: ****
     driver-class-name: com.mysql.cj.jdbc.Driver
 
 file:
