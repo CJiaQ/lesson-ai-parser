@@ -205,7 +205,7 @@ public class FileServiceImpl implements FileService {
      * 方案 B：对接真实 DeepSeek 大模型（需要 2 个参数，留空防报错）
      */
     private LessonAnalysis executeDeepSeekAnalysis(Long fileId, String fileName) {
-        throw new RuntimeException("DeepSeek API 尚未配置，请先使用 Mock 模式自测！");
+        throw new RuntimeException("DeepSeek API 尚未配置，Mock 模式下自测！");
     }
 
 }
